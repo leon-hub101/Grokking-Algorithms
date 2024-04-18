@@ -1,6 +1,6 @@
 function findSmallest(arr) {
     let smallest = arr[0];
-    let smallestIndex = i;
+    let smallestIndex = 0;
     for (let i = 1; i < arr.length; i++) {
         if (arr[i] < smallest) {
             smallest = arr[i];
@@ -13,9 +13,9 @@ function findSmallest(arr) {
 function selectionSort(arr) {
     newArr = [];
     copiedArr = arr.slice();
-    for (let i = 0; i < copiedArr.length; i++) {
-        smallest = findSmallest(copiedArr);
-        newArr.push(smallest);
+    while (copiedArr.length > 0) {
+        let smallestIndex = findSmallest(copiedArr);
+        newArr.push(copiedArr.splice(smallestIndex, 1)[0]);
     }
     return newArr;
 }
@@ -46,5 +46,10 @@ const unsorted_numbers = [
     46587372, 30254612, 62060452, 16728950, 83152241, 68263017, 32156261, 63448075, 81274538, 88797459
 ]
 
-console.log(selectionSort(names));
-console.log(selectionSort(unsorted_numbers));
+sorted_names = selectionSort(names);
+smallest_num = findSmallest(unsorted_numbers);
+sorted_num_list = selectionSort(unsorted_numbers);
+
+console.log("JavaScript sorted Names list: ", sorted_names);
+console.log("JavaSript smallest number from list: ", smallest_num);
+console.log("JavaSript sorted numbers list: ", sorted_num_list);

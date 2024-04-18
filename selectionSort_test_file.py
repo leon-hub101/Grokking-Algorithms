@@ -85,5 +85,6 @@ unsorted_numbers = [
 ]
 
 
-print(selectionSort(names))
-print(selectionSort(unsorted_numbers))
+print("Pyton sorted names list: ", selectionSort(names))
+print("Python smallest number from numbers list: ", findSmallest(unsorted_numbers))
+print("Python sorted numbers list: ", selectionSort(unsorted_numbers))
