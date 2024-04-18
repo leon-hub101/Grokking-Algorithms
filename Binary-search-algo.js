@@ -31,5 +31,39 @@ const my_nums_list = [
     181, 183, 185, 187, 189, 191, 193, 195, 197, 199
 ]
 
+const names = [
+    "Olivia", "Noah", "Emma", "Liam", "Sophia", "Jacob", "Ava", "Mason", "Isabella", "William",
+    "Mia", "Ethan", "Amelia", "James", "Harper", "Alexander", "Emily", "Michael", "Charlotte", "Benjamin",
+    "Madison", "Elijah", "Abigail", "Daniel", "Lily", "Aiden", "Chloe", "Logan", "Grace", "Matthew",
+    "Victoria", "Lucas", "Aria", "Jackson", "Scarlett", "David", "Zoe", "Carter", "Layla", "Jayden",
+    "Ellie", "John", "Nora", "Owen", "Evelyn", "Dylan", "Lucy", "Luke", "Anna", "Henry"
+]
+
+const sortedNames = names.sort();
+
+
 const test1 = binarySearch(my_nums_list, 123);
 console.log(test1);
+
+function binarySearch(arr, item) {
+    let low = 0;
+    let high = arr.length - 1;
+
+    While (low <= high) {
+        let mid = Math.floor((low + high) / 2);
+        let guess = arr[mid];
+
+        if (guess === item) {
+            return mid;
+        }
+        if (guess > item) {
+            high = mid - 1;
+         } else {
+            low = mid + 1;
+         }
+    };
+    return -1
+}
+
+const test2 = binarySearch(sortedNames, "Scarlett");
+console.log(test2);
