@@ -7,7 +7,7 @@ def findSmallest(arr):
             smallest_index = i
     return smallest_index
 
-def selectionSort(rr):
+def selectionSort(arr):
     newArr = []
     copiedArr = list(arr) 
     for i in range(len(copiedArr)):
