@@ -1,4 +1,4 @@
-function binarySearch(arr, item) {
+function binarySearch1(arr, item) {
     let low = 0;
     let high = arr.length - 1;
     
@@ -42,10 +42,10 @@ const names = [
 const sortedNames = names.sort();
 
 
-const test1 = binarySearch(my_nums_list, 123);
+const test1 = binarySearch1(my_nums_list, 123);
 console.log(test1);
 
-function binarySearch(arr, item) {
+function binarySearch2(arr, item) {
     let low = 0;
     let high = arr.length - 1;
 
@@ -65,5 +65,29 @@ function binarySearch(arr, item) {
     return -1
 }
 
-const test2 = binarySearch(sortedNames, "Scarlett");
+const test2 = binarySearch2(sortedNames, "Scarlett");
 console.log(test2);
+
+function binarySearch3(arr, item) {
+    let low = 0;
+    let high = arr.length -1
+
+    while (low <= high) {
+        let mid = Math.floor((low + high) / 2);
+        let guess = arr[mid];
+
+        if (guess === item) {
+            return mid;
+        } 
+        
+        if (guess > item) {
+            high = mid - 1;
+        } else {
+            low = mid + 1;
+        }
+    } 
+    return -1;
+}
+
+const test3 = binarySearch3(sortedNames, "Elijah");
+console.log(test3);
